@@ -1,0 +1,42 @@
+body {
+    background-color: #fffe9e;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    }
+
+
+header {
+    background-color: #9ea0ff;
+    margin: 40px 40px 0 40px;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+    text-align: center;
+}
+
+h1 {
+    background-color: #9ea0ff;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    text-align: center;
+    margin: 0 40px 20px 40px;
+}
+
+section {
+    text-align: center;
+}
+
+button {
+    justify-content: center;
+    margin: 5px;
+}
+
+@media all and (min-width: 600px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+    }
+}
