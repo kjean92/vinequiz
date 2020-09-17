@@ -11,3 +11,44 @@
 // 4-7/10 is a judgey reaction
 // 8-9/10 is an okay reaction
 // 10/10 is a happy Gavin reaction
+
+//  handle quiz app
+
+function handleQuizApp(){
+    show();
+    generateStartPage();
+    checkAnswers();
+    nextQuestion();
+    restartQuiz();
+    finishQuiz();
+
+}
+
+
+// event handlers
+
+
+
+function startQuiz() {
+    $('body').on('click', '#start-button', function (event){
+        event.preventDefault();
+    });
+}
+
+function finishQuiz() {
+    $('body').on('click', '.finish-quiz', function (event){
+        event.preventDefault();
+        generateEndPage();
+    });
+}
+
+function checkAnswers() {
+    $('body').on('click', '.submit-answer', function (event){
+        event.preventDefault();
+        generateAnswerPage();
+    });
+}
+
+
+
+
