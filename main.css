@@ -1,38 +1,80 @@
+/* GeneralFormatting */
+
+* {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
 body {
     background-color: #fffe9e;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
+    justify-content: center; 
     }
 
 
 header {
+    flex: 1;
     background-color: #9ea0ff;
-    margin: 40px 40px 0 40px;
-    justify-content: center;
-    font-family: 'Montserrat', sans-serif;
+    margin: 40px 40px 40px 40px;
     font-weight: bold;
-    font-size: 40px;
-    text-align: center;
+    font-size: 35px;
+    border-radius: 10px;
 }
 
 h1 {
     background-color: #9ea0ff;
-    justify-content: center;
-    font-family: 'Montserrat', sans-serif;
     font-weight: 300;
-    text-align: center;
     margin: 0 40px 20px 40px;
+    border-radius: 10px;
+    padding: 10px;
 }
 
-section {
-    text-align: center;
-}
+
+/* Buttons */
 
 button {
-    justify-content: center;
     margin: 5px;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 25px;
+    font-family: 'Montserrat', sans-serif;
+    border: 0px;
 }
+
+.startQuiz {
+    background-color: #9EFFCD;
+    padding: 25px;
+}
+
+.noQuiz {
+    background-color: #ff9ed0;
+    padding: 25px;
+}
+
+/* Questions*/
+.answer-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+.button {
+    padding: 40px;
+    border-radius: 10px;
+    background-color:#9ea0ff;
+    text-align: center;
+    margin: 3px;
+}
+
+
+
+
+
+
 
 @media all and (min-width: 600px) {
     header {
