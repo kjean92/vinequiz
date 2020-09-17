@@ -11,4 +11,3 @@
 // 4-7/10 is a judgey reaction
 // 8-9/10 is an okay reaction
 // 10/10 is a happy Gavin reaction
-
