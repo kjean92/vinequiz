@@ -100,7 +100,7 @@ const questions = [
             3: "a lopsided giraffe",
             4: "the first version of my Thinkful portfolio",
         },
-        correctAnswer: num
+        correctAnswer: 1
     },
 
 // End questions
