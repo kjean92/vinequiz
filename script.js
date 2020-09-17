@@ -18,114 +18,73 @@ const store = {
     // Cheys
     questions: [
     {
-        quote: 'Road work ahead? Uh, yeah...',
-        answers: {
-            1: "Why wouldn't it?",
-            2: "That's what she said!",
-            3: "I sure hope it does",
-            4: "Lorem Ipsum Stuff"
-        },
-        correctAnswer: 3
+        question: 'Road work ahead? Uh, yeah...',
+        answers: ["Why wouldn't it?", "That's what she said!", "I sure hope it does", "Lorem Ipsum Stuff"
+        ],
+        correctAnswer: "I sure hope it does"
     },
     {
-        quote: 'How much money do you have? 69 cents...Oh! You know what that means',
-        answers: {
-            1: "😏",
-            2: "I dont have enough money for chicken nuggets",
-            3: "ya nasty & you need jesus",
-            4: "Lorem Ipsum Stuff"
-        },
-        correctAnswer: 2
+        question: 'How much money do you have? 69 cents...Oh! You know what that means',
+        answers: [ "😏", "I dont have enough money for chicken nuggets", "ya nasty & you need jesus", "Lorem Ipsum Stuff"
+        ],
+        correctAnswer: "I don't have enough money for chicken nuggets"
     },
     {
-        quote: 'Hurricane Katrina? More like hurricane',
-        answers: {
-            1: "vanilla",
-            2: "chinchilla",
-            3: "gorilla! Rest in peace Harambe",
-            4: "tortilla!"
-        },
-        correctAnswer: 4
+        question: 'Hurricane Katrina? More like hurricane',
+        answers: ["vanilla", "chinchilla", "gorilla! Rest in peace Harambe", "tortilla!"
+        ],
+        correctAnswer: "tortilla!"
     },
     {
-        quote: 'What are you doing!? My eye brows! Thats a big @$$ mirror.',
-        answers: {
-            1: "I have big @$$ eyebrows!",
-            2: "Dont judge me!",
-            3: "You know im blind Harold!",
-            4: "well you have a big @$$ @$$"
-        },
-        correctAnswer: 1
+        question: 'What are you doing!? My eye brows! Thats a big @$$ mirror.',
+        answers: ["I have big @$$ eyebrows!", "Dont judge me!", "You know im blind Harold!", "well you have a big @$$ @$$"
+        ],
+        correctAnswer: "I have big @$$ eyebrows!"
     },
     {
-        quote: 'So basically wot i was finking was *gets punched* ah fack',
-        answers: {
-            1: "I cant believe you've done this",
-            2: "Why would you do that?",
-            3: "Inconceivable!",
-            4: "You've just punched me!"
-        },
-        correctAnswer: 1
+        question: 'So basically wot i was finking was *gets punched* ah fack',
+        answers: ["I cant believe you've done this", "Why would you do that?", "Inconceivable!", "You've just punched me!"
+        ],
+        correctAnswer: "I can't believe you've done this"
     },
 
     // Kaylenas Questions
     {
-        quote: '"I wanna be a _________ , baby!"',
-        answers: {
-            1: "cowboy",
-            2: "engineer",
-            3: "Vine star",
-            4: "astronaut",
-        },
-        correctAnswer: 1
+        question: '"I wanna be a _________ , baby!"',
+        answers: ["cowboy", "engineer", "Vine star", "astronaut"
+        ],
+        correctAnswer: "cowboy"
     },
     {
-        quote: '1st person: *shoots starter pistol* 2nd person: "This is why ________ "',
-        answers: {
-            1: "mom and dad got divorced!",
-            2: "Tina left you!",
-            3: "mom doesn't FUCKING love you!",
-            4: "we can't have nice things!",
-        },
-        correctAnswer: 3
+        question: '1st person: *shoots starter pistol* 2nd person: "This is why ________ "',
+        answers: ["mom and dad got divorced!", "Tina left you!", "mom doesn't 🦆ING love you!", "we can't have nice things!"
+    ],
+        correctAnswer: "mom doesn't 🦆ING love you!"
     },
     {
-        quote: 'Student: "What if I want to have sex BEFORE I get married?" Teacher: "_______"',
-        answers: {
-            1: "You WILL get pregnant, and DIE.",
-            2: "Well, I guess you'll have to be prepared to die.",
-            3: "You'll make your grandmother cry.",
-            4: "...you? Married? Lol",
-        },
-        correctAnswer: 2
+        question: 'Student: "What if I want to have sex BEFORE I get married?" Teacher: "_______"',
+        answers: ["You WILL get pregnant, and DIE.", "Well, I guess you'll have to be prepared to die.", "You'll make your grandmother cry.", "...you? Married? Lol"
+        ],
+        correctAnswer: "Well, I guess you'll have to be prepared to die."
     },
     {
-        quote: 'Mother: "What did you do?!" Child: "I _____"',
-        answers: {
-            1: "stole the Declaration of Independence",
-            2: "created a Quiz App",
-            3: "found a dog! *cuts to a wild raccoon in a cage*",
-            4: "shaved my eyebrows!",
-        },
-        correctAnswer: 4 
+        question: 'Mother: "What did you do?!" Child: "I _____"',
+        answers: ["stole the Declaration of Independence", "created a Quiz App", "found a dog! *cuts to a wild raccoon in a cage*", "shaved my eyebrows!"
+        ],
+        correctAnswer: "shaved my eyebrows!" 
     },
     {
-        quote: 'I love myself. Even though I look like ________, I still love myself.',
-        answers: {
-            1: "a bURRNT chicken nugget",
-            2: "Lindsey Lohan in 2007",
-            3: "a lopsided giraffe",
-            4: "the first version of my Thinkful portfolio",
-        },
-        correctAnswer: 1
+        question: 'I love myself. Even though I look like ________, I still love myself.',
+        answers: ["a bURRNT chicken nugget", "Lindsey Lohan in 2007", "a lopsided giraffe", "the first version of my Thinkful portfolio"
+        ],
+        correctAnswer: "a bURRNT chicken nugget"
     },
     ],
     quizStarted: true,
     questionNumber: 0,
     score: 0,
 
-}, 
-function handleQuizApp(){
+}; function handleQuizApp(){
     show();
     generateStartPage();
     checkAnswers();
@@ -136,11 +95,11 @@ function handleQuizApp(){
 }
 
 $(handleQuizApp);
+
 function show(state) {
     $('body').html(`${state}`);
 }
 // event handlers
-
 
 
 function startQuiz() {
@@ -192,8 +151,56 @@ function generateStartPage() {
 
 function generateQuestionPage() {
     let questionNum = store.questionNumber;
-    let question
+    let question = getQuestions();
+    let score = store.score;
+
+    let template = `<form class='container'>
+    <h2> Question ${questionNum + 1}</h2>
+    <p>${question.question}</p>
+    <ul>
+        <li><input type='radio' value='${question.answers[0]}' name='quiz-question'/><label>${question.answers[0]}</label></li>
+        <li><input type='radio' value='${question.answers[1]}' name='quiz-question'/><label>${question.answers[1]}</label></li>
+        <li><input type='radio' value='${question.answers[2]}' name='quiz-question'/><label>${question.answers[2]}</label></li>
+        <li><input type='radio' value='${question.answers[3]}' name='quiz-question'/><label>${question.answers[3]}</label></li>
+        <li><button type='submit' class='submit-answer'>Submit Answer</button></li>
+    </ul>
+
+    <p>${questionNum + 1} out of ${store.questions.length}</p>
+
+    <p>Score is ${score} out of ${store.questions.length} </p>
+
+    </form>`
+
+    show(template);
     
-}
+ }
+
+ function generateAnswerPage() {
+     let userAnswer = $('input [name="quiz-question"]:checked').val();
+     let question = getQuestions();
+     let correctAnswer = question.correctAnswer;
+     let score = store.score;
+     let template;
+
+     if (correctAnswer === userAnswer) {
+         store.score += 1;
+         store.questionNumber += 1;
+         template = `<h2> Correct </h2>`
+     } else {
+         store.questionNumber += 1;
+         template = `<h2> Incorrect </h2>
+         <p> The correct answer was ${correctAnswer}</p>`
+     }
+     
+     if (store.questionNumber === store.questions.length) {
+         template += "<button class='finish-quiz'> Finish Quiz </button>"
+     }
+     show(template);
+     
+ }
+
+ function generateEndPage() {
+
+ }
 
 
