@@ -53,52 +53,52 @@ const questions = [
 
     // Kaylenas Questions
     {
-        quote: '       ',
+        quote: '"I wanna be a _________ , baby!"',
         answers: {
-            1: "           ",
-            2: "           ",
-            3: "           ",
-            4: "           ",
+            1: "cowboy",
+            2: "engineer",
+            3: "Vine star",
+            4: "astronaut",
         },
-        correctAnswer: num
+        correctAnswer: 1
     },
     {
-        quote: '       ',
+        quote: '1st person: *shoots starter pistol* 2nd person: "This is why ________ "',
         answers: {
-            1: "           ",
-            2: "           ",
-            3: "           ",
-            4: "           ",
+            1: "mom and dad got divorced!",
+            2: "Tina left you!",
+            3: "mom doesn't FUCKING love you!",
+            4: "we can't have nice things!",
         },
-        correctAnswer: num
+        correctAnswer: 3
     },
     {
-        quote: '       ',
+        quote: 'Student: "What if I want to have sex BEFORE I get married?" Teacher: "_______"',
         answers: {
-            1: "           ",
-            2: "           ",
-            3: "           ",
-            4: "           ",
+            1: "You WILL get pregnant, and DIE.",
+            2: "Well, I guess you'll have to be prepared to die.",
+            3: "You'll make your grandmother cry.",
+            4: "...you? Married? Lol",
         },
-        correctAnswer: num
+        correctAnswer: 2
     },
     {
-        quote: '       ',
+        quote: 'Mother: "What did you do?!" Child: "I _____"',
         answers: {
-            1: "           ",
-            2: "           ",
-            3: "           ",
-            4: "           ",
+            1: "stole the Declaration of Independence",
+            2: "created a Quiz App",
+            3: "found a dog! *cuts to a wild raccoon in a cage*",
+            4: "shaved my eyebrows!",
         },
-        correctAnswer: num 
+        correctAnswer: 4 
     },
     {
-        quote: '       ',
+        quote: 'I love myself. Even though I look like ________, I still love myself.',
         answers: {
-            1: "           ",
-            2: "           ",
-            3: "           ",
-            4: "           ",
+            1: "a bURRNT chicken nugget",
+            2: "Lindsey Lohan in 2007",
+            3: "a lopsided giraffe",
+            4: "the first version of my Thinkful portfolio",
         },
         correctAnswer: num
     },
