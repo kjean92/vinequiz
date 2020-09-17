@@ -39,18 +39,35 @@ button {
     padding: 5px;
     border-radius: 10px;
     font-size: 25px;
-    font-family: 'Montserrat', sans-serif;
     border: 0px;
+    width: 250px;
+    height: 75px;
 }
 
+.start {
+    background-color: #9ea0ff;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 5px;
+}
+
+
 .startQuiz {
-    background-color: #9EFFCD;
+    background-color:#9effcd;
     padding: 25px;
+    width: 250px;
+    margin: 20px;
+    text-align: center;
+    font-size: 24px;
 }
 
 .noQuiz {
     background-color: #ff9ed0;
     padding: 25px;
+    width: 250px;
+    margin: 20px;
+    text-align: center;
+    font-size: 24px;
 }
 
 /* Questions*/
@@ -62,12 +79,13 @@ button {
     align-items: stretch;
 }
 
-.button {
+.buttonRadio {
     padding: 40px;
     border-radius: 10px;
     background-color:#9ea0ff;
     text-align: center;
-    margin: 3px;
+    margin: 10px;
+    width: 250px;
 }
 
 
