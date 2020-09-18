@@ -39,19 +39,19 @@ const store = {
         question: 'Hurricane Katrina? More like hurricane',
         answers: ["vanilla", "chinchilla", "gorilla! Rest in peace Harambe", "tortilla!"
         ],
-        correctAnswer: 4
+        correctAnswer: "tortilla!"
     },
     {
         question: 'What are you doing!? My eye brows! Thats a big @$$ mirror.',
         answers: ["I have big @$$ eyebrows!", "Dont judge me!", "You know im blind Harold!", "well you have a big @$$ @$$"
         ],
-        correctAnswer: 1
+        correctAnswer: "I have big @$$ eyebrows!"
     },
     {
         question: 'So basically wot i was finking was *gets punched* ah fack',
-        answers: ["I cant believe you've done this", "Why would you do that?", "Inconceivable!", "You've just punched me!"
+        answers: ['I cant believe youve done this', "Why would you do that?", "Inconceivable!", "You've just punched me!"
         ],
-        correctAnswer: 1
+        correctAnswer: 'I cant believe youve done this' 
     },
 
     // Kaylenas Questions
@@ -59,31 +59,31 @@ const store = {
         question: '"I wanna be a _________ , baby!"',
         answers: ["cowboy", "engineer", "Vine star", "astronaut"
         ],
-        correctAnswer: 1
+        correctAnswer: "cowboy"
     },
     {
         question: '1st person: *shoots starter pistol* 2nd person: "This is why ________ "',
-        answers: ["mom and dad got divorced!", "Tina left you!", "mom doesn't FUCKING love you!", "we can't have nice things!"
+        answers: ["mom and dad got divorced!", "Tina left you!", "mom doesnt FUCKING love you!", "we can't have nice things!"
     ],
-        correctAnswer: 3
+        correctAnswer: "mom doesnt FUCKING love you!"
     },
     {
         question: 'Student: "What if I want to have sex BEFORE I get married?" Teacher: "_______"',
-        answers: ["You WILL get pregnant, and DIE.", "Well, I guess you'll have to be prepared to die.", "You'll make your grandmother cry.", "...you? Married? Lol"
+        answers: ["You WILL get pregnant, and DIE.", "Well, I guess youll have to be prepared to die.", "You'll make your grandmother cry.", "...you? Married? Lol"
         ],
-        correctAnswer: 2
+        correctAnswer: "Well, I guess youll have to be prepared to die."
     },
     {
         question: 'Mother: "What did you do?!" Child: "I _____"',
         answers: ["stole the Declaration of Independence", "created a Quiz App", "found a dog! *cuts to a wild raccoon in a cage*", "shaved my eyebrows!"
         ],
-        correctAnswer: 4 
+        correctAnswer: "shaved my eyebrows!"
     },
     {
         question: 'I love myself. Even though I look like ________, I still love myself.',
         answers: ["a bURRNT chicken nugget", "Lindsey Lohan in 2007", "a lopsided giraffe", "the first version of my Thinkful portfolio"
         ],
-        correctAnswer: 1
+        correctAnswer: "a bURRNT chicken nugget"
     },
     ],
     quizStarted: true,
@@ -117,6 +117,7 @@ function checkAnswers() {
     $('body').on('click', '.submit-answer', function (event){
         event.preventDefault();
         generateAnswerPage();
+        
     });
 }
 
@@ -154,7 +155,7 @@ function generateQuestionPage() {
     let score = store.score;
 
     let template = `<form class='container'>
-    <h2> Question ${questionNum + 1}</h2>
+    <h2> Question ${questionNum + 1} out of 10</h2>
     <p>${question.question}</p>
     <ul>
         <li><input type='radio' value='${question.answers[0]}' name='quiz-question'/><label>${question.answers[0]}</label></li>
@@ -163,8 +164,6 @@ function generateQuestionPage() {
         <li><input type='radio' value='${question.answers[3]}' name='quiz-question'/><label>${question.answers[3]}</label></li>
         <li><button type='submit' class='submit-answer'>Submit Answer</button></li>
     </ul>
-
-    <p>${questionNum + 1} out of ${store.questions.length}</p>
 
     <p>Score is ${score} out of ${store.questions.length} </p>
 
@@ -181,39 +180,48 @@ function generateQuestionPage() {
      let score = store.score;
      let template;
 
-     if (userAnswer !== correctAnswer) {
+     if (!userAnswer) {
+        alert('Whoever didnt pick an answer...ya moms a h0e');
+    } else {
+        if (userAnswer !== correctAnswer) {
          store.questionNumber += 1;
          template = `<h2> Incorrect 😭 </h2>
          <p> The correct answer was ${correctAnswer}</p>`
      } else {
-        console.log('this is the score', score)
-        console.log('this is the store score', store.score)
-        score ++;
+        store.score += 1;
         store.questionNumber += 1;
-        template = `<h2> Correct 🚀</h2>`
+        template = `<h2> Correct 🥰</h2>`
      }
 
      if (store.questionNumber === store.questions.length) {
-         template += "<button class='finish-quiz' BYE Felicia </button>"
+         template += "<button class='finish-quiz'> BYE Felicia </button>"
      } else {
          template += "<button class='next-question'> Next Question </button>"
      }
 
      show(template);
      
-     
+    }
  }
 
  function generateEndPage() {
-     const template = `<h1> Thanks for taking the quiz!</h1> 
-     <button class='restart-quiz'> Restart Quiz </button>`
+     let score = store.score;
+     let template = `<h1> Thanks for taking the quiz! </h1> 
+     <p> You got a ${score} out of 10! 🌟</p>
+     <button class='restart-quiz'> Restart Quiz </button>
+     <button class='new-quiz'> Anotha One </button>`
 
      show(template);
 
  }
 
 function restartQuiz(){
-
+    $('body').on('click', '.restart-quiz', function(event) {
+        store.questions.score = 0;
+        store.questions.questionNumber = 0;
+        event.preventDefault();
+        location.reload();
+    })
 }
 
 function handleQuizApp(){
@@ -224,4 +232,3 @@ function handleQuizApp(){
     restartQuiz();
     finishQuiz();
 }
-
