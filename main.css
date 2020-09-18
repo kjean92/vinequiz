@@ -1,6 +1,7 @@
 /* GeneralFormatting */
 
 * {
+
     text-align: center;
     font-family: 'Montserrat', sans-serif;
 }
@@ -10,65 +11,70 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
     }
 
-
-header {
-    flex: 1;
-    background-color: #9ea0ff;
-    margin: 40px 40px 40px 40px;
-    font-weight: bold;
-    font-size: 35px;
-    border-radius: 10px;
-}
-
 h1 {
-    background-color: #9ea0ff;
-    font-weight: 300;
-    margin: 0 40px 20px 40px;
-    border-radius: 10px;
-    padding: 10px;
+    padding-top: 45%;
+} 
+
+h2 {
+    padding-top: 45%;
 }
+
+
 
 
 /* Buttons */
 
-button {
-    margin: 5px;
-    padding: 5px;
-    border-radius: 10px;
-    font-size: 25px;
-    border: 0px;
-    width: 250px;
-    height: 75px;
+.submit-answer {
+    border-radius: 5px;
     background-color: #9ea0ff;
+    border: none;
+    width: auto;
+    padding: 20px 20px 20px 20px;
 }
+.finish-quiz{
+    border-radius: 5px;
+    background-color: #9ea0ff;
+    border: none;
+    padding: 5%;
+}
+
+.restart-quiz {
+    border-radius: 10px;
+    background-color: #9ea0ff;
+    border: none;
+    padding: 5%;
+    margin-bottom: 15px;
+    height: 75px;
+    width: 40%;
+}
+.new-quiz {
+    border-radius: 10px;
+    background-color: #9ea0ff;
+    border: none;
+    padding: 5%;
+    height: 75px;
+    width: 40%;
+}
+
+.next-question {
+    border-radius: 10px;
+    background-color: #9ea0ff;
+    border: none;
+    padding: 5%;
+    margin-bottom: 3%;
+    height: 75px;
+    width: 40%;
+}
+
 
 .start {
     background-color: #9ea0ff;
     border-radius: 10px;
     margin: 10px;
     padding: 5px;
-}
-
-
-.startQuiz {
-    background-color:#9effcd;
-    padding: 25px;
-    width: 250px;
-    margin: 20px;
-    text-align: center;
-    font-size: 24px;
-}
-
-.noQuiz {
-    background-color: #ff9ed0;
-    padding: 25px;
-    width: 250px;
-    margin: 20px;
-    text-align: center;
-    font-size: 24px;
 }
 
 /* Questions*/
@@ -80,21 +86,22 @@ button {
     align-items: stretch;
 }
 
-ul {
+ul li {
     list-style-type: none;
+    text-align: left; 
+    padding-bottom: 10px;
+    
 }
 
-.buttonRadio, input[type="radio"] {
-    /* padding: 40px; */
-    border-radius: 10px;
-    background-color:#9ea0ff;
-    text-align: center;
-    margin: 10px;
-    /* width: 250px; */
+p {
+    padding-bottom: 10%;
+
 }
 
 
-
+input[type="radio"]{
+    margin-right: 15px;
+}
 
 
 

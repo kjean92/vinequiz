@@ -25,13 +25,13 @@ const store = {
     questions: [
     {
         question: 'Road work ahead? Uh, yeah...',
-        answers: ["Why wouldn't it?", "That's what she said!", "I sure hope it does", "Lorem Ipsum Stuff"
+        answers: ["Why wouldn't it?", "That's what she said!", "I sure hope it does", "Sure Jan"
         ],
         correctAnswer: "I sure hope it does"
     },
     {
         question: 'How much money do you have? 69 cents...Oh! You know what that means',
-        answers: [ "😏", "I dont have enough money for chicken nuggets", "ya nasty & you need jesus", "Lorem Ipsum Stuff"
+        answers: [ "😏", "I dont have enough money for chicken nuggets", "ya nasty & you need jesus", "I need a sugar daddy"
         ],
         correctAnswer: "I dont have enough money for chicken nuggets"
     },
@@ -63,9 +63,9 @@ const store = {
     },
     {
         question: '1st person: *shoots starter pistol* 2nd person: "This is why ________ "',
-        answers: ["mom and dad got divorced!", "Tina left you!", "mom doesnt FUCKING love you!", "we can't have nice things!"
+        answers: ["mom and dad got divorced!", "Tina left you!", "mom doesnt 🦆ING love you!", "we can't have nice things!"
     ],
-        correctAnswer: "mom doesnt FUCKING love you!"
+        correctAnswer: "mom doesnt 🦆ING love you!"
     },
     {
         question: 'Student: "What if I want to have sex BEFORE I get married?" Teacher: "_______"',
@@ -206,7 +206,7 @@ function generateQuestionPage() {
 
  function generateEndPage() {
      let score = store.score;
-     let template = `<h1> Thanks for taking the quiz! </h1> 
+     let template = `<h1> A finished quiz! Thaaaaanksssss 🥑 </h1> 
      <p> You got a ${score} out of 10! 🌟</p>
      <button class='restart-quiz'> Restart Quiz </button>
      <button class='new-quiz'> Anotha One </button>`
