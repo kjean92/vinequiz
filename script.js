@@ -14,6 +14,12 @@
 
 //  handle quiz app
 
+// things to move forward
+// 1. restart quiz doesn't work
+// 2. take you back home or something
+// 3. correct response should say good job    <-------Done
+// 4. show a list of correct/incorrect number/question
+
 const store = {
     // Cheys
     questions: [
@@ -21,13 +27,13 @@ const store = {
         question: 'Road work ahead? Uh, yeah...',
         answers: ["Why wouldn't it?", "That's what she said!", "I sure hope it does", "Lorem Ipsum Stuff"
         ],
-        correctAnswer: 3
+        correctAnswer: "I sure hope it does"
     },
     {
         question: 'How much money do you have? 69 cents...Oh! You know what that means',
         answers: [ "😏", "I dont have enough money for chicken nuggets", "ya nasty & you need jesus", "Lorem Ipsum Stuff"
         ],
-        correctAnswer: 2
+        correctAnswer: "I dont have enough money for chicken nuggets"
     },
     {
         question: 'Hurricane Katrina? More like hurricane',
@@ -84,15 +90,7 @@ const store = {
     questionNumber: 0,
     score: 0,
 
-}; function handleQuizApp(){
-    show();
-    generateStartPage();
-    checkAnswers();
-    nextQuestion();
-    restartQuiz();
-    finishQuiz();
-
-}
+}; 
 
 $(handleQuizApp);
 
@@ -125,6 +123,7 @@ function checkAnswers() {
 function restartQuiz() {
     $('body').on('click', '.restart-quiz', function (event) {
         event.preventDefault();
+        generateStartPage()
     })
 }
 
@@ -176,20 +175,22 @@ function generateQuestionPage() {
  }
 
  function generateAnswerPage() {
-     let userAnswer = $('input [name="quiz-question"]:checked').val();
+     let userAnswer = $('input[type=radio][name="quiz-question"]:checked').val();
      let question = getQuestions();
      let correctAnswer = question.correctAnswer;
      let score = store.score;
      let template;
 
-     if (correctAnswer === userAnswer) {
-         store.score += 1;
+     if (userAnswer !== correctAnswer) {
          store.questionNumber += 1;
-         template = `<h2> Correct </h2>`
-     } else {
-         store.questionNumber += 1;
-         template = `<h2> Incorrect </h2>
+         template = `<h2> Incorrect 😭 </h2>
          <p> The correct answer was ${correctAnswer}</p>`
+     } else {
+        console.log('this is the score', score)
+        console.log('this is the store score', store.score)
+        score ++;
+        store.questionNumber += 1;
+        template = `<h2> Correct 🚀</h2>`
      }
 
      if (store.questionNumber === store.questions.length) {
@@ -204,10 +205,23 @@ function generateQuestionPage() {
  }
 
  function generateEndPage() {
-     const template = `<h1> Thanks for taking the quiz!</h1> <button class='restart-quiz'> Restart Quiz </button>`
+     const template = `<h1> Thanks for taking the quiz!</h1> 
+     <button class='restart-quiz'> Restart Quiz </button>`
 
      show(template);
 
  }
 
+function restartQuiz(){
+
+}
+
+function handleQuizApp(){
+    show();
+    generateStartPage();
+    checkAnswers();
+    nextQuestion();
+    restartQuiz();
+    finishQuiz();
+}
 

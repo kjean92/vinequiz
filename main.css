@@ -80,13 +80,17 @@ button {
     align-items: stretch;
 }
 
-.buttonRadio {
-    padding: 40px;
+ul {
+    list-style-type: none;
+}
+
+.buttonRadio, input[type="radio"] {
+    /* padding: 40px; */
     border-radius: 10px;
     background-color:#9ea0ff;
     text-align: center;
     margin: 10px;
-    width: 250px;
+    /* width: 250px; */
 }
 
 
