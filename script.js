@@ -35,56 +35,56 @@ const store = {
         ],
         correctAnswer: "I dont have enough money for chicken nuggets"
     },
-    {
-        question: 'Hurricane Katrina? More like hurricane',
-        answers: ["vanilla", "chinchilla", "gorilla! Rest in peace Harambe", "tortilla!"
-        ],
-        correctAnswer: "tortilla!"
-    },
-    {
-        question: 'What are you doing!? My eye brows! Thats a big @$$ mirror.',
-        answers: ["I have big @$$ eyebrows!", "Dont judge me!", "You know im blind Harold!", "well you have a big @$$ @$$"
-        ],
-        correctAnswer: "I have big @$$ eyebrows!"
-    },
-    {
-        question: 'So basically wot i was finking was *gets punched* ah fack',
-        answers: ['I cant believe youve done this', "Why would you do that?", "Inconceivable!", "You've just punched me!"
-        ],
-        correctAnswer: 'I cant believe youve done this' 
-    },
+    // {
+    //     question: 'Hurricane Katrina? More like hurricane',
+    //     answers: ["vanilla", "chinchilla", "gorilla! Rest in peace Harambe", "tortilla!"
+    //     ],
+    //     correctAnswer: "tortilla!"
+    // },
+    // {
+    //     question: 'What are you doing!? My eye brows! Thats a big @$$ mirror.',
+    //     answers: ["I have big @$$ eyebrows!", "Dont judge me!", "You know im blind Harold!", "well you have a big @$$ @$$"
+    //     ],
+    //     correctAnswer: "I have big @$$ eyebrows!"
+    // },
+    // {
+    //     question: 'So basically wot i was finking was *gets punched* ah fack',
+    //     answers: ['I cant believe youve done this', "Why would you do that?", "Inconceivable!", "You've just punched me!"
+    //     ],
+    //     correctAnswer: 'I cant believe youve done this' 
+    // },
 
     // Kaylenas Questions
-    {
-        question: '"I wanna be a _________ , baby!"',
-        answers: ["cowboy", "engineer", "Vine star", "astronaut"
-        ],
-        correctAnswer: "cowboy"
-    },
-    {
-        question: '1st person: *shoots starter pistol* 2nd person: "This is why ________ "',
-        answers: ["mom and dad got divorced!", "Tina left you!", "mom doesnt 🦆ING love you!", "we can't have nice things!"
-    ],
-        correctAnswer: "mom doesnt 🦆ING love you!"
-    },
-    {
-        question: 'Student: "What if I want to have sex BEFORE I get married?" Teacher: "_______"',
-        answers: ["You WILL get pregnant, and DIE.", "Well, I guess youll have to be prepared to die.", "You'll make your grandmother cry.", "...you? Married? Lol"
-        ],
-        correctAnswer: "Well, I guess youll have to be prepared to die."
-    },
-    {
-        question: 'Mother: "What did you do?!" Child: "I _____"',
-        answers: ["stole the Declaration of Independence", "created a Quiz App", "found a dog! *cuts to a wild raccoon in a cage*", "shaved my eyebrows!"
-        ],
-        correctAnswer: "shaved my eyebrows!"
-    },
-    {
-        question: 'I love myself. Even though I look like ________, I still love myself.',
-        answers: ["a bURRNT chicken nugget", "Lindsey Lohan in 2007", "a lopsided giraffe", "the first version of my Thinkful portfolio"
-        ],
-        correctAnswer: "a bURRNT chicken nugget"
-    },
+    // {
+    //     question: '"I wanna be a _________ , baby!"',
+    //     answers: ["cowboy", "engineer", "Vine star", "astronaut"
+    //     ],
+    //     correctAnswer: "cowboy"
+    // },
+    // {
+    //     question: '1st person: *shoots starter pistol* 2nd person: "This is why ________ "',
+    //     answers: ["mom and dad got divorced!", "Tina left you!", "mom doesnt 🦆ING love you!", "we can't have nice things!"
+    // ],
+    //     correctAnswer: "mom doesnt 🦆ING love you!"
+    // },
+    // {
+    //     question: 'Student: "What if I want to have sex BEFORE I get married?" Teacher: "_______"',
+    //     answers: ["You WILL get pregnant, and DIE.", "Well, I guess youll have to be prepared to die.", "You'll make your grandmother cry.", "...you? Married? Lol"
+    //     ],
+    //     correctAnswer: "Well, I guess youll have to be prepared to die."
+    // },
+    // {
+    //     question: 'Mother: "What did you do?!" Child: "I _____"',
+    //     answers: ["stole the Declaration of Independence", "created a Quiz App", "found a dog! *cuts to a wild raccoon in a cage*", "shaved my eyebrows!"
+    //     ],
+    //     correctAnswer: "shaved my eyebrows!"
+    // },
+    // {
+    //     question: 'I love myself. Even though I look like ________, I still love myself.',
+    //     answers: ["a bURRNT chicken nugget", "Lindsey Lohan in 2007", "a lopsided giraffe", "the first version of my Thinkful portfolio"
+    //     ],
+    //     correctAnswer: "a bURRNT chicken nugget"
+    // },
     ],
     quizStarted: true,
     questionNumber: 0,
@@ -107,15 +107,15 @@ function render() {
     } else if (store.questionNumber >= 0 && store.questionNumber < store.questions.length) {
         html = generateQuestionPage();
         html += nextQuestion();
-        $('main').html(html);    }
-        else {
+        $('main').html(html);   
+    } else {
     $('main').html(generateEndPage());
     }
 }
 // event handlers
 function startQuiz() {
-    $('body').on('click', '.start-button', function (event){
-        store.quizStarted = true;
+    $('body').on('click', '.start-quiz', function (event){
+        nextQuestion()
         render();
     });
 }
@@ -145,6 +145,7 @@ function restartQuiz() {
 function nextQuestion() {
     $('body').on('click', '.next-question', function (event) {
         render();
+        
     })
 }
 
@@ -156,8 +157,8 @@ function getQuestions() {
 
 function generateStartPage() {
     const template = `<h1>Do It for the Vine</h1>
-    <button id='start-quiz' class='next-question'>Yee Yee</button>
-    <button id='no-quiz' class='restart-quiz'>I ain't gon do it</button>`
+    <button id='start-quiz' class='start-quiz'>Yee Yee</button>
+    <button id='no-quiz' class='no-quiz'>I ain't gon do it</button>`
 
     show(template);
 }
@@ -237,6 +238,7 @@ function resetQuiz(){
 }
 
 function handleQuizApp(){
+    startQuiz();
     render();
     show();
     generateStartPage();
