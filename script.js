@@ -97,12 +97,26 @@ $(handleQuizApp);
 function show(state) {
     $('body').html(`${state}`);
 }
+
+function render() {
+    let html = '';
+
+    if (store.quizStarted === false) {
+        $('main').html(generateStartPage());
+        return;
+    } else if (store.questionNumber >= 0 && store.questionNumber < store.questions.length) {
+        html = generateQuestionPage();
+        html += nextQuestion();
+        $('main').html(html);    }
+        else {
+    $('main').html(generateEndPage());
+    }
+}
 // event handlers
-
-
 function startQuiz() {
     $('body').on('click', '.start-button', function (event){
-        event.preventDefault();
+        store.quizStarted = true;
+        render();
     });
 }
 
@@ -123,15 +137,14 @@ function checkAnswers() {
 
 function restartQuiz() {
     $('body').on('click', '.restart-quiz', function (event) {
-        event.preventDefault();
-        generateStartPage()
+        resetQuiz();
+        render();
     })
 }
 
 function nextQuestion() {
     $('body').on('click', '.next-question', function (event) {
-        event.preventDefault();
-        generateQuestionPage();
+        render();
     })
 }
 
@@ -215,16 +228,16 @@ function generateQuestionPage() {
 
  }
 
-function restartQuiz(){
+function resetQuiz(){
     $('body').on('click', '.restart-quiz', function(event) {
-        store.questions.score = 0;
+        store.quizStarted = false;
         store.questions.questionNumber = 0;
-        event.preventDefault();
-        location.reload();
+        store.score = 0;
     })
 }
 
 function handleQuizApp(){
+    render();
     show();
     generateStartPage();
     checkAnswers();
