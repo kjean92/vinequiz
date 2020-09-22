@@ -23,82 +23,81 @@
 const store = {
     // Cheys
     questions: [
-    {
-        question: 'Road work ahead? Uh, yeah...',
-        answers: ["Why wouldn't it?", "That's what she said!", "I sure hope it does", "Sure Jan"
-        ],
-        correctAnswer: "I sure hope it does"
-    },
-    {
-        question: 'How much money do you have? 69 cents...Oh! You know what that means',
-        answers: [ "😏", "I dont have enough money for chicken nuggets", "ya nasty & you need jesus", "I need a sugar daddy"
-        ],
-        correctAnswer: "I dont have enough money for chicken nuggets"
-    },
-    // {
-    //     question: 'Hurricane Katrina? More like hurricane',
-    //     answers: ["vanilla", "chinchilla", "gorilla! Rest in peace Harambe", "tortilla!"
-    //     ],
-    //     correctAnswer: "tortilla!"
-    // },
-    // {
-    //     question: 'What are you doing!? My eye brows! Thats a big @$$ mirror.',
-    //     answers: ["I have big @$$ eyebrows!", "Dont judge me!", "You know im blind Harold!", "well you have a big @$$ @$$"
-    //     ],
-    //     correctAnswer: "I have big @$$ eyebrows!"
-    // },
-    // {
-    //     question: 'So basically wot i was finking was *gets punched* ah fack',
-    //     answers: ['I cant believe youve done this', "Why would you do that?", "Inconceivable!", "You've just punched me!"
-    //     ],
-    //     correctAnswer: 'I cant believe youve done this' 
-    // },
+        {
+            question: 'Road work ahead? Uh, yeah...',
+            answers: ["Why wouldn't it?", "That's what she said!", "I sure hope it does", "Sure Jan"
+            ],
+            correctAnswer: "I sure hope it does"
+        },
+        {
+            question: 'How much money do you have? 69 cents...Oh! You know what that means',
+            answers: ["😏", "I dont have enough money for chicken nuggets", "ya nasty & you need jesus", "I need a sugar daddy"
+            ],
+            correctAnswer: "I dont have enough money for chicken nuggets"
+        },
+        {
+            question: 'Hurricane Katrina? More like hurricane',
+            answers: ["vanilla", "chinchilla", "gorilla! Rest in peace Harambe", "tortilla!"
+            ],
+            correctAnswer: "tortilla!"
+        },
+        {
+            question: 'What are you doing!? My eye brows! Thats a big @$$ mirror.',
+            answers: ["I have big @$$ eyebrows!", "Dont judge me!", "You know im blind Harold!", "well you have a big @$$ @$$"
+            ],
+            correctAnswer: "I have big @$$ eyebrows!"
+        },
+        {
+            question: 'So basically wot i was finking was *gets punched* ah fack',
+            answers: ['I cant believe youve done this', "Why would you do that?", "Inconceivable!", "You've just punched me!"
+            ],
+            correctAnswer: 'I cant believe youve done this'
+        },
 
-    // Kaylenas Questions
-    // {
-    //     question: '"I wanna be a _________ , baby!"',
-    //     answers: ["cowboy", "engineer", "Vine star", "astronaut"
-    //     ],
-    //     correctAnswer: "cowboy"
-    // },
-    // {
-    //     question: '1st person: *shoots starter pistol* 2nd person: "This is why ________ "',
-    //     answers: ["mom and dad got divorced!", "Tina left you!", "mom doesnt 🦆ING love you!", "we can't have nice things!"
-    // ],
-    //     correctAnswer: "mom doesnt 🦆ING love you!"
-    // },
-    // {
-    //     question: 'Student: "What if I want to have sex BEFORE I get married?" Teacher: "_______"',
-    //     answers: ["You WILL get pregnant, and DIE.", "Well, I guess youll have to be prepared to die.", "You'll make your grandmother cry.", "...you? Married? Lol"
-    //     ],
-    //     correctAnswer: "Well, I guess youll have to be prepared to die."
-    // },
-    // {
-    //     question: 'Mother: "What did you do?!" Child: "I _____"',
-    //     answers: ["stole the Declaration of Independence", "created a Quiz App", "found a dog! *cuts to a wild raccoon in a cage*", "shaved my eyebrows!"
-    //     ],
-    //     correctAnswer: "shaved my eyebrows!"
-    // },
-    // {
-    //     question: 'I love myself. Even though I look like ________, I still love myself.',
-    //     answers: ["a bURRNT chicken nugget", "Lindsey Lohan in 2007", "a lopsided giraffe", "the first version of my Thinkful portfolio"
-    //     ],
-    //     correctAnswer: "a bURRNT chicken nugget"
-    // },
+        // Kaylenas Questions
+        {
+            question: '"I wanna be a _________ , baby!"',
+            answers: ["cowboy", "engineer", "Vine star", "astronaut"
+            ],
+            correctAnswer: "cowboy"
+        },
+        {
+            question: '1st person: *shoots starter pistol* 2nd person: "This is why ________ "',
+            answers: ["mom and dad got divorced!", "Tina left you!", "mom doesnt 🦆ING love you!", "we can't have nice things!"
+            ],
+            correctAnswer: "mom doesnt 🦆ING love you!"
+        },
+        {
+            question: 'Student: "What if I want to have sex BEFORE I get married?" Teacher: "_______"',
+            answers: ["You WILL get pregnant, and DIE.", "Well, I guess youll have to be prepared to die.", "You'll make your grandmother cry.", "...you? Married? Lol"
+            ],
+            correctAnswer: "Well, I guess youll have to be prepared to die."
+        },
+        {
+            question: 'Mother: "What did you do?!" Child: "I _____"',
+            answers: ["stole the Declaration of Independence", "created a Quiz App", "found a dog! *cuts to a wild raccoon in a cage*", "shaved my eyebrows!"
+            ],
+            correctAnswer: "shaved my eyebrows!"
+        },
+        {
+            question: 'I love myself. Even though I look like ________, I still love myself.',
+            answers: ["a bURRNT chicken nugget", "Lindsey Lohan in 2007", "a lopsided giraffe", "the first version of my Thinkful portfolio"
+            ],
+            correctAnswer: "a bURRNT chicken nugget"
+        },
     ],
     quizStarted: true,
     questionNumber: 0,
     score: 0,
 
-}; 
-
-$(handleQuizApp);
+};
 
 function show(state) {
     $('body').html(`${state}`);
 }
 
 function render() {
+    console.log(`render activated`)
     let html = '';
 
     if (store.quizStarted === false) {
@@ -106,46 +105,40 @@ function render() {
         return;
     } else if (store.questionNumber >= 0 && store.questionNumber < store.questions.length) {
         html = generateQuestionPage();
-        html += nextQuestion();
-        $('main').html(html);   
+        $('main').html(html);
     } else {
-    $('main').html(generateEndPage());
+        $('main').html(generateEndPage());
     }
 }
 // event handlers
 function startQuiz() {
-    $('body').on('click', '.start-quiz', function (event){
-        nextQuestion()
+    console.log(`startQuiz has been activated`)
+    $('body').on('click', '.start-quiz', function (event) {
+        console.log(`start quiz trigger fired`)
         render();
     });
 }
 
 function finishQuiz() {
-    $('body').on('click', '.finish-quiz', function (event){
+    $('body').on('click', '.finish-quiz', function (event) {
         event.preventDefault();
         generateEndPage();
     });
 }
 
 function checkAnswers() {
-    $('body').on('click', '.submit-answer', function (event){
+    $('body').on('click', '.submit-answer', function (event) {
         event.preventDefault();
         generateAnswerPage();
-        
+
     });
 }
 
-function restartQuiz() {
-    $('body').on('click', '.restart-quiz', function (event) {
-        resetQuiz();
-        render();
-    })
-}
 
 function nextQuestion() {
     $('body').on('click', '.next-question', function (event) {
         render();
-        
+
     })
 }
 
@@ -184,66 +177,75 @@ function generateQuestionPage() {
     </form>`
 
     show(template);
-    
- }
 
- function generateAnswerPage() {
-     let userAnswer = $('input[type=radio][name="quiz-question"]:checked').val();
-     let question = getQuestions();
-     let correctAnswer = question.correctAnswer;
-     let score = store.score;
-     let template;
+}
 
-     if (!userAnswer) {
+function generateAnswerPage() {
+    let userAnswer = $('input[type=radio][name="quiz-question"]:checked').val();
+    let question = getQuestions();
+    let correctAnswer = question.correctAnswer;
+    let score = store.score;
+    let template;
+
+    if (!userAnswer) {
         alert('Whoever didnt pick an answer...ya moms a h0e');
     } else {
         if (userAnswer !== correctAnswer) {
-         store.questionNumber += 1;
-         template = `<h2> Incorrect 😭 </h2>
+            store.questionNumber += 1;
+            template = `<h2> Incorrect 😭 </h2>
          <p> The correct answer was ${correctAnswer}</p>`
-     } else {
-        store.score += 1;
-        store.questionNumber += 1;
-        template = `<h2> Correct 🥰</h2>`
-     }
+        } else {
+            store.score += 1;
+            store.questionNumber += 1;
+            template = `<h2> Correct 🥰</h2>`
+        }
 
-     if (store.questionNumber === store.questions.length) {
-         template += "<button class='finish-quiz'> BYE Felicia </button>"
-     } else {
-         template += "<button class='next-question'> Next Question </button>"
-     }
+        if (store.questionNumber === store.questions.length) {
+            template += "<button class='finish-quiz'> BYE Felicia </button>"
+        } else {
+            template += "<button class='next-question'> Next Question </button>"
+        }
 
-     show(template);
-     
+        show(template);
+
     }
- }
+}
 
- function generateEndPage() {
-     let score = store.score;
-     let template = `<h1> A finished quiz! Thaaaaanksssss 🥑 </h1> 
+function generateEndPage() {
+    let score = store.score;
+    let template = `<h1> A finished quiz! Thaaaaanksssss 🥑 </h1> 
      <p> You got a ${score} out of 10! 🌟</p>
      <button class='restart-quiz'> Restart Quiz </button>
      <button class='new-quiz'> Anotha One </button>`
 
-     show(template);
+    show(template);
 
- }
+}
 
-function resetQuiz(){
-    $('body').on('click', '.restart-quiz', function(event) {
-        store.quizStarted = false;
-        store.questions.questionNumber = 0;
-        store.score = 0;
+//step 4
+function resetQuiz() {
+    store.quizStarted = false;
+    store.questions.questionNumber = 0;
+    store.score = 0;
+}
+//step 2
+function restartQuiz() {
+    $('body').on('click', '.restart-quiz', function (event) {
+        //step 3
+        resetQuiz();
+        render();
     })
 }
 
-function handleQuizApp(){
+function handleQuizApp() {
     startQuiz();
-    render();
     show();
     generateStartPage();
     checkAnswers();
     nextQuestion();
+    //step 1
     restartQuiz();
     finishQuiz();
 }
+
+$(handleQuizApp);
