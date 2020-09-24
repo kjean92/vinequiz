@@ -1,9 +1,15 @@
-/* GeneralFormatting */
+main {
+	width: 800px;
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
 
-* {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
+	flex-direction: column;
+	padding: 20px;
 }
 
 body {
@@ -14,17 +20,106 @@ body {
     justify-content: center;
     }
 
-h1 {
-    padding-top: 20%;
-} 
 
-h2 {
-    padding-top: 45%;
+main#start,
+main#end {
+	text-align: center;
 }
 
+article {
+	width: 100%;
+	margin: 20px;
+	background-color: rgba(255, 255, 255, 0.95);
+	border-radius: 0.25rem;
+	overflow: hidden;
+	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
 
+article .inner {
+	padding: 30px 20px;
+}
 
+article footer {
+	padding: 10px;
+	text-align: center;
+	background-color: rgba(219, 219, 219, 0.8);
+}
 
+h1,
+.large {
+	margin-top: 0;
+	font-weight: bold;
+	font-size: 1.5rem;
+}
+
+button {
+	margin-top: 20px;
+	background-color: rgb(0, 0, 0);
+	color: white;
+	padding: 0.5rem 1rem;
+	transition: ease-in-out 0.1s;
+}
+
+button:hover {
+	background-color: rgba(0, 0, 0, 0.8);
+	cursor: pointer;
+}
+
+.answer {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	padding: 2px 5px;
+}
+
+.answer span {
+	width: 20px;
+}
+
+.answer * {
+	margin: 2px 5px;
+}
+
+.answer.correct {
+	border: 3px solid limegreen;
+	border-radius: 0.25rem;
+	margin: 5px 0;
+}
+
+.answer.incorrect {
+	margin: 5px 0;
+	border: 3px solid firebrick;
+	border-radius: 0.25rem;
+	color: firebrick;
+}
+
+.answer p {
+	flex-grow: 1;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	margin: 0;
+	padding: 5px 0;
+}
+
+.answer.correct label,
+.answer.correct p {
+	color: limegreen;
+}
+
+.answer svg {
+	fill: currentColor;
+}
+
+footer.footer {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	padding: 10px;
+	background-color: white;
+}
+
+/* new css ends */
 /* Buttons */
 
 .submit-answer {
